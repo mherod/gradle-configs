@@ -7,6 +7,7 @@ configurations.all {
     resolutionStrategy.dependencySubstitution {
         substitute module("$ktstdlib-jre7:$kotlin_version") with module("$ktstdlib-jdk7:$kotlin_version")
         substitute module("$ktstdlib-jre8:$kotlin_version") with module("$ktstdlib-jdk8:$kotlin_version")
+        substitute module("$ktstdlib:$kotlin_version") with module("$ktstdlib-jdk8:$kotlin_version")
     }
 
     resolutionStrategy.preferProjectModules()

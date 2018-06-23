@@ -1,0 +1,33 @@
+buildscript {
+    ext.kotlin_mavens = [
+            "https://kotlin.bintray.com/kotlinx",
+            "https://kotlin.bintray.com/ktor",
+            "https://kotlin.bintray.com/kotlin-dev/"
+    ]
+    repositories {
+        kotlin_mavens.each { mavenUrl ->
+            maven {
+                //noinspection GroovyAssignabilityCheck
+                url mavenUrl
+            }
+        }
+    }
+}
+allprojects {
+    repositories {
+        kotlin_mavens.each { mavenUrl ->
+            maven {
+                //noinspection GroovyAssignabilityCheck
+                url mavenUrl
+            }
+        }
+    }
+}
+repositories {
+    kotlin_mavens.each { mavenUrl ->
+        maven {
+            //noinspection GroovyAssignabilityCheck
+            url mavenUrl
+        }
+    }
+}

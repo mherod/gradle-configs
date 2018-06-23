@@ -1,0 +1,13 @@
+configurations.all {
+
+    ext.ktstdlib = "org.jetbrains.kotlin:kotlin-stdlib"
+
+    resolutionStrategy.force "$ktstdlib:$kotlin_version", "$ktstdlib-jdk8:$kotlin_version", "$ktstdlib-jre8:$kotlin_version", "$ktstdlib-jre7:$kotlin_version", "$ktstdlib-jdk7:$kotlin_version"
+
+    resolutionStrategy.dependencySubstitution {
+        substitute module("$ktstdlib-jre7:$kotlin_version") with module("$ktstdlib-jdk7:$kotlin_version")
+        substitute module("$ktstdlib-jre8:$kotlin_version") with module("$ktstdlib-jdk8:$kotlin_version")
+    }
+
+    resolutionStrategy.preferProjectModules()
+}
